@@ -10,24 +10,20 @@
 .header {
   width: 100%;
   background-color: var(--md-sys-color-primary);
-  padding: 12px;
+  padding-right: 12px;
   border-radius: 0 0 12px 12px;
   color: var(--md-sys-color-on-primary);
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
-  max-height: 15vh;
-  align-items: center;
 }
 
 .header-logo {
-  width: 20%;
-  height: auto;
-  max-height: 100%;
-  object-fit: cover;
+  width: 128px;
+  height: 128px;
 }
 
 .header-book {
+  padding: 12px;
   display: flex;
   align-items: center;
   flex-direction: column;
