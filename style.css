@@ -1,1 +1,35 @@
-/* add your CSS here */
+@import url("theme.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans";
+}
+
+.header {
+  width: 100%;
+  background-color: var(--md-sys-color-primary);
+  padding: 12px;
+  border-radius: 0 0 12px 12px;
+  color: var(--md-sys-color-on-primary);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  max-height: 15vh;
+  align-items: center;
+}
+
+.header-logo {
+  width: 20%;
+  height: auto;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.header-book {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: large;
+}
