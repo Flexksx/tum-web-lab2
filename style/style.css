@@ -1,0 +1,102 @@
+.map {
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  margin-top: auto;
+  text-align: center;
+}
+
+.divider-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.divider {
+  width: 80%;
+
+  height: 2px;
+  background-color: orange;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+}
+
+.about-title {
+  font-size: 84px;
+  text-align: center;
+}
+
+.about-image {
+  border-radius: 24px;
+  padding: 12px;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+}
+.about-text-explanation {
+  padding-top: 12px;
+  padding-bottom: 48px;
+  padding-left: 96px;
+  padding-right: 80px;
+  font-size: 24px;
+}
+.about-we-all {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.about-we-all-head {
+  font-size: 36px;
+  position: relative;
+  animation: moveWeAll 7s infinite alternate ease-in-out;
+}
+
+@keyframes moveWeAll {
+  0% {
+    transform: translateY(0);
+  } /* Start position */
+  16.6% {
+    transform: translateY(36px);
+  } /* Step 1 */
+  33.2% {
+    transform: translateY(72px);
+  } /* Step 2 */
+  49.8% {
+    transform: translateY(108px);
+  } /* Step 3 */
+  66.4% {
+    transform: translateY(144px);
+  } /* Step 4 */
+  83% {
+    transform: translateY(180px);
+  } /* Step 5 */
+  100% {
+    transform: translateY(0);
+  } /* Back to start */
+}
+.about-we-all-list {
+  display: flex;
+  flex-direction: column;
+}
+.about-we-all-list span {
+  margin-left: 4px;
+  font-size: 36px;
+}
+
+.cta-container {
+  display: flex;
+  justify-content: center;
+  padding: 48px;
+}
+
+.cta {
+  font-size: 48px;
+}
