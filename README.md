@@ -1,3 +1,4 @@
+Hosted on vercel - https://tum-web-lab2-puce.vercel.app/
 # Lab 2 - Landing page
 
 Create a web page for your/friends/relatives business (example: car-rent, cookies-shop, crypto-scam)
