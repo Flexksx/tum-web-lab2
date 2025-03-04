@@ -2,7 +2,7 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 83vh; /* Full viewport height */
+  height: 90vh; /* Full viewport height */
 }
 
 /* Styling for the image */
@@ -18,7 +18,7 @@
 
 /* Styling for the centered text in the hero image */
 .hero-text p {
-  font-size: 3rem;
+  font-size: 3rem; /* Default font size for mobile */
   font-weight: bold;
   color: white;
   text-align: center;
@@ -28,9 +28,8 @@
   left: 50%;
   transform: translate(-50%, -50%); /* Centers the text */
   text-transform: uppercase; /* Make text uppercase */
-  white-space: nowrap; /* Ensures it stays on one line */
-  overflow: hidden; /* Hides overflow */
-  text-overflow: ellipsis; /* If text overflows, add ellipsis (optional) */
+  white-space: normal; /* Allow text to wrap if needed */
+  word-wrap: break-word; /* Break words to fit if needed */
   width: 100%;
 }
 
@@ -38,11 +37,11 @@
 .questions {
   position: absolute;
   bottom: 20px;
-  left: 20px;
+  left: 10px; /* Adjust for mobile */
   display: flex;
   flex-direction: column;
   gap: 10px;
-  font-size: 3rem;
+  font-size: 2rem; /* Smaller font for mobile */
 }
 
 .question {
@@ -62,114 +61,17 @@
   transform: scale(1.05);
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .hero-text p {
-    font-size: 3rem; //* General styling for the hero section */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 90vh; /* Full viewport height */
-    }
-
-    /* Styling for the image */
-    .hero-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Ensures the image covers the entire container */
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1; /* Makes sure the image stays behind the text */
-    }
-
-    /* Styling for the centered text in the hero image */
-    .hero-text p {
-      font-size: 3rem;
-      font-weight: bold;
-      color: white;
-      text-align: center;
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); /* Centers the text */
-      text-transform: uppercase; /* Make text uppercase */
-      white-space: nowrap; /* Ensures it stays on one line */
-      overflow: hidden; /* Hides overflow */
-      text-overflow: ellipsis; /* If text overflows, add ellipsis (optional) */
-      width: 100%;
-    }
-
-    /* Styling for the questions below the hero image */
-    .questions {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      font-size: 3rem;
-    }
-
-    .question {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    .question:hover {
-      color: var(--highlight-color); /* Adjust to your preferred hover color */
-    }
-
-    /* Optional: Add a little space between the links when hovered */
-    .question:active,
-    .question:hover {
-      transform: scale(1.05);
-    }
-
-    /* Mobile Styles */
-    @media (max-width: 768px) {
-      .hero-text p {
-        font-size: 2rem; /* Smaller text for mobile */
-        white-space: normal; /* Allow the text to wrap if needed */
-        word-wrap: break-word; /* Break words if needed to fit */
-      }
-
-      .questions {
-        font-size: 1rem; /* Smaller font for the questions on mobile */
-        left: 10px; /* Move questions a bit more to the left for mobile */
-      }
-    }
-
-    /* Larger Screens */
-    @media (min-width: 768px) {
-      .hero-text p {
-        font-size: 3rem; /* Larger text for desktop */
-      }
-
-      .questions {
-        font-size: 1.5rem; /* Standard size for questions */
-      }
-    }
-    white-space: normal; /* Allow the text to wrap if needed */
-    word-wrap: break-word; /* Break words if needed to fit */
-  }
-
-  .questions {
-    font-size: 3rem; /* Smaller font for the questions on mobile */
-    left: 10px; /* Move questions a bit more to the left for mobile */
-  }
-}
-
 /* Larger Screens */
 @media (min-width: 768px) {
+  .hero {
+    height: 83vh;
+  }
   .hero-text p {
-    font-size: 7rem; /* Larger text for desktop */
+    font-size: 8rem; /* Larger text for desktop */
   }
 
   .questions {
-    font-size: 1.5rem; /* Standard size for questions */
+    font-size: 4rem; /* Larger font for the questions on desktop */
+    left: 20px; /* Adjust position for larger screens */
   }
 }
