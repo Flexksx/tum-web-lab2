@@ -3,18 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/reset.css" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>COVOR Speakeasy Bar</title>
-
-    <link rel="stylesheet" href="style/header.css" />
-    <link rel="stylesheet" href="style/theme.css" />
-    <link rel="stylesheet" href="style/promo.css" />
-    <link rel="stylesheet" href="style/style.css" />
   </head>
+
   <body class="light">
-    <header class="header">
-      <img class="header-logo" src="/static/Logo.jpg" />
+    <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="/assets/logo.jpg"
+            alt="Covor Logo"
+            width="128"
+            height="128"
+          />
+        </div>
+
+        <!-- Kebab Menu Button (Mobile) -->
+        <div class="menu-toggle">
+          <i class="fas fa-ellipsis-v"></i>
+          <!-- Kebab Icon -->
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="nav-links">
+          <a href="#about"><i class="fas fa-book-open"></i> About</a>
+          <a href="#menu"><i class="fas fa-mug-hot"></i> Menu</a>
+          <a href="#specialties"><i class="fas fa-star"></i> Specialties</a>
+          <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- <header class="header">
+      <img class="header-logo" src="/assets/Logo.jpg" />
       <div class="contact-list">
         <div class="header-element">
           <span>Address</span>
@@ -26,7 +64,7 @@
         </div>
         <div class="header-element">
           <span>
-            <img width="48" src="/static/insta.png" alt="Instagram Logo" />
+            <img width="48" src="/assets/insta.png" alt="Instagram Logo" />
           </span>
           <span>
             <a href="https://www.instagram.com/covor.bar.md/?hl=en"
@@ -35,7 +73,7 @@
           </span>
         </div>
       </div>
-    </header>
+    </header> -->
     <div class="landing-main">
       <div class="landing-text">
         <span>Straight</span>
@@ -43,7 +81,7 @@
         <span>the</span>
         <span>underground</span>
       </div>
-      <img class="landing-image" src="/static//cocktail-landing.png" />
+      <img class="landing-image" src="/assets//cocktail-landing.png" />
     </div>
   </body>
   <div class="divider-container">
@@ -51,7 +89,7 @@
   </div>
   <div class="about">
     <img
-      src="static/covor-fam.png"
+      src="assets/covor-fam.png"
       width="400"
       alt="Covor family photo"
       class="about-image"
@@ -97,4 +135,14 @@
       ></iframe>
     </div>
   </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active"); // Toggle visibility
+      });
+    });
+  </script>
 </html>

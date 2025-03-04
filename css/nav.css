@@ -1,0 +1,54 @@
+/* General Navbar Styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for Kebab Menu (Hidden on Large Screens) */
+.menu-toggle {
+  display: none; /* Hide by default */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide menu by default */
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    width: 200px;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+  }
+
+  .menu-toggle {
+    display: block; /* Show kebab menu */
+  }
+
+  /* Show Menu when Active */
+  .nav-links.active {
+    display: flex;
+  }
+}
