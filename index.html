@@ -1,134 +1,278 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/css/reset.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="/css/reset.css" />
-  <link rel="stylesheet" href="/css/mascot.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <link href="dist/output.css" rel="stylesheet">
+    <style>
+      @keyframes fadeInMascot {
+        from {
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(20px);
+        }
 
-  <title>COVOR Speakeasy Bar</title>
-</head>
+        to {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+      }
 
-<body class="bg-gray">
-  <header class="bg-white bg-opacity-98 shadow-md sticky top-0 w-full z-10 backdrop-blur-lg ">
-    <nav class="flex justify-between items-center px-5 max-w-6xl mx-auto">
-      <img class="w-16 h-16 md:w-32 md:h-32 object-cover" src="/assets/logo.jpg" alt="Covor Logo" />
+      @keyframes bobbing {
+        0% {
+          transform: translateY(0);
+        }
 
- 
-      <!-- Kebab Menu Button (Mobile) -->
-      <div class="block md:hidden text-2xl cursor-pointer" id="menu-toggle">
-        <i class="fas fa-bars"></i>
-      </div>
-  
-      <!-- Navigation Links -->
-      <div class="hidden md:flex flex-col md:flex-row absolute md:relative top-20 right-5 md:top-auto md:right-auto bg-white md:bg-transparent shadow-md md:shadow-none rounded-lg md:rounded-none p-2.5 w-50 md:w-auto md:p-0" id="nav-links">
-        <a href="#about" class="block md:inline-flex px-2.5 md:px-5 py-2.5 md:py-0 text-center text-black font-bold no-underline md:ml-8 relative hover:text-gray-600 transition-colors">
-          <i class="fas fa-book-open mr-2"></i> About
-        </a>
-        <a href="#menu" class="block md:inline-flex px-2.5 md:px-5 py-2.5 md:py-0 text-center text-black font-bold no-underline md:ml-8 relative hover:text-gray-600 transition-colors">
-          <i class="fas fa-mug-hot mr-2"></i> Menu
-        </a>
-        <a href="#contact" class="block md:inline-flex px-2.5 md:px-5 py-2.5 md:py-0 text-center text-black font-bold no-underline md:ml-8 relative hover:text-gray-600 transition-colors">
-          <i class="fas fa-envelope mr-2"></i> Contact
-        </a>
-      </div>
-    </nav>
-    <div class="w-full h-12 md:hidden bg-repeat-x bg-left-top" 
-    style="background-image: url('../assets/covor-pattern.jpg'); background-size: 150px auto;"></div>
-    <div class="w-full h-24 hidden md:block bg-repeat-x bg-left-top" 
-    style="background-image: url('../assets/covor-pattern.jpg'); background-size: 200px auto;"></div>
-  </header>
-  <div class="relative w-full h-[90vh] md:h-[80vh]">
-    <img 
-      src="/assets/covor-bar-stoika.png" 
-      alt="Covor cocktail photo" 
-      class="w-full h-full object-cover absolute top-0 left-0 -z-10" 
+        100% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @keyframes wiggle {
+        0% {
+          transform: rotate(-5deg);
+        }
+
+        50% {
+          transform: rotate(5deg);
+        }
+
+        100% {
+          transform: rotate(-5deg);
+        }
+      }
+
+      .mascot-animation {
+        animation: fadeInMascot 1s forwards;
+        animation-delay: 500ms;
+        opacity: 0;
+        transform: translateY(20px);
+        visibility: hidden;
+      }
+
+      .mascot-image-animation {
+        animation: bobbing 3s infinite alternate, wiggle 2s infinite;
+      }
+    </style>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
     />
-    
-    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
-      <p class="text-3xl md:text-8xl font-bold text-white text-center m-0 uppercase break-words">
-        Take a seat
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <title>COVOR Speakeasy Bar</title>
+  </head>
+
+  <body class="bg-gray-100">
+    <header
+      class="bg-white bg-opacity-98 shadow-md sticky top-0 w-full z-10 backdrop-blur-lg"
+    >
+      <nav class="flex justify-between items-center px-5 max-w-6xl mx-auto">
+        <img
+          class="w-16 h-16 md:w-32 md:h-32 object-cover"
+          src="/assets/logo.jpg"
+          alt="Covor Logo"
+        />
+
+        <!-- Kebab Menu Button (Mobile) -->
+        <div class="block md:hidden text-2xl cursor-pointer" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Navigation Links -->
+        <div
+          class="hidden md:flex flex-col md:flex-row absolute md:relative top-20 right-5 md:top-auto md:right-auto bg-white md:bg-transparent shadow-md md:shadow-none rounded-lg md:rounded-none p-2.5 w-50 md:w-auto md:p-0"
+          id="nav-links"
+        >
+          <a
+            href="#about"
+            class="block md:inline-flex px-2.5 md:px-5 py-2.5 md:py-0 text-center text-black font-bold no-underline md:ml-8 relative hover:text-gray-600 transition-colors"
+          >
+            <i class="fas fa-book-open mr-2"></i> About
+          </a>
+          <a
+            href="#menu"
+            class="block md:inline-flex px-2.5 md:px-5 py-2.5 md:py-0 text-center text-black font-bold no-underline md:ml-8 relative hover:text-gray-600 transition-colors"
+          >
+            <i class="fas fa-mug-hot mr-2"></i> Menu
+          </a>
+          <a
+            href="#contact"
+            class="block md:inline-flex px-2.5 md:px-5 py-2.5 md:py-0 text-center text-black font-bold no-underline md:ml-8 relative hover:text-gray-600 transition-colors"
+          >
+            <i class="fas fa-envelope mr-2"></i> Contact
+          </a>
+        </div>
+      </nav>
+      <div
+        class="w-full h-12 md:hidden bg-repeat-x bg-left-top"
+        style="
+          background-image: url('/assets/covor-pattern.jpg');
+          background-size: 150px auto;
+        "
+      ></div>
+      <div
+        class="w-full h-24 hidden md:block bg-repeat-x bg-left-top"
+        style="
+          background-image: url('/assets/covor-pattern.jpg');
+          background-size: 200px auto;
+        "
+      ></div>
+    </header>
+
+    <div class="relative w-full h-[90vh] md:h-[80vh]">
+      <img
+        src="/assets/covor-bar-stoika.png"
+        alt="Covor cocktail photo"
+        class="w-full h-full object-cover absolute top-0 left-0 -z-10"
+      />
+
+      <div
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full"
+      >
+        <p
+          class="text-3xl md:text-8xl font-bold text-white text-center m-0 uppercase break-words"
+        >
+          Take a seat
+        </p>
+      </div>
+
+      <div class="absolute bottom-5 left-2.5 md:left-5 flex flex-col gap-2.5">
+        <a
+          href="#about"
+          class="text-2xl md:text-4xl text-white font-bold no-underline transition-all duration-300 hover:scale-105 hover:text-yellow-400"
+        >
+          Who are you?
+        </a>
+        <a
+          href="#contact"
+          class="text-2xl md:text-4xl text-white font-bold no-underline transition-all duration-300 hover:scale-105 hover:text-yellow-400"
+        >
+          How?
+        </a>
+        <a
+          href="#menu"
+          class="text-2xl md:text-4xl text-white font-bold no-underline transition-all duration-300 hover:scale-105 hover:text-yellow-400"
+        >
+          What do you have?
+        </a>
+      </div>
+    </div>
+
+    <!-- Section for About -->
+    <section id="about" class="flex flex-col items-center px-4 py-8">
+      <h2 class="text-5xl font-bold mb-4">About Us</h2>
+      <p class="text-xl pt-1 font-light text-center max-w-2xl">
+        Covor is the first and only (if you don't know of any other) speakeasy
+        bar in Chisinau
       </p>
+      <p class="text-xl pt-1 font-light text-center max-w-2xl">
+        Our mission is to popularize and embed our moldovan traditions, our
+        childhoods and the things we love into cocktails as an art form.
+      </p>
+    </section>
+
+    <!-- Pattern Divider -->
+    <div
+      class="w-full h-12 md:hidden bg-repeat-x bg-left-top"
+      style="
+        background-image: url('/assets/covor-pattern.jpg');
+        background-size: 150px auto;
+      "
+    ></div>
+    <div
+      class="w-full h-24 hidden md:block bg-repeat-x bg-left-top"
+      style="
+        background-image: url('/assets/covor-pattern.jpg');
+        background-size: 300px auto;
+      "
+    ></div>
+
+    <!-- Section for Menu -->
+    <section id="menu" class="flex flex-col items-center px-4 py-8">
+      <h2 class="text-5xl font-bold mb-4">Menu</h2>
+      <p class="text-xl pt-1 font-light text-center max-w-2xl">
+        Sike! We don't have one.
+      </p>
+      <p class="text-xl pt-1 font-light text-center max-w-2xl">
+        Each drink is selected carefully for every guest.
+      </p>
+      <p class="text-xl pt-1 font-light text-center max-w-2xl">
+        We strive to deliver the best mood and experience.
+      </p>
+      <p class="text-xl pt-1 font-light text-center max-w-2xl">
+        You can't put LOVE on a paper.
+      </p>
+    </section>
+
+    <!-- Pattern Divider -->
+    <div
+      class="w-full h-12 md:hidden bg-repeat-x bg-left-top"
+      style="
+        background-image: url('/assets/covor-pattern.jpg');
+        background-size: 150px auto;
+      "
+    ></div>
+    <div
+      class="w-full h-24 hidden md:block bg-repeat-x bg-left-top"
+      style="
+        background-image: url('/assets/covor-pattern.jpg');
+        background-size: 300px auto;
+      "
+    ></div>
+
+    <!-- Section for Contact -->
+    <section id="contact" class="flex flex-col items-center px-4 py-8">
+      <h2 class="text-5xl font-bold mb-4">Contact</h2>
+      <p class="text-xl pt-1 font-light text-center max-w-2xl">+3737373737</p>
+      <p class="text-xl pt-1 font-light text-center max-w-2xl">
+        It's a speakeasy, find it yourself, duh.
+      </p>
+    </section>
+
+    <!-- Mascot Element -->
+    <div
+      class="fixed bottom-5 right-5 z-50 transition-all duration-500 mascot-animation group"
+    >
+      <img
+        src="/assets/bartender-drink-occupation-avatar-512.webp"
+        alt="Bartender Mascot"
+        class="w-24 h-24 cursor-pointer rounded-full shadow-lg mascot-image-animation"
+      />
+      <div
+        class="absolute bottom-28 right-0 bg-white rounded-lg py-2.5 px-4 shadow-md font-sans text-sm whitespace-nowrap opacity-0 transform translate-y-2.5 transition-all duration-300 pointer-events-none invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+      >
+        We're waiting for you
+        <div
+          class="absolute -bottom-2.5 right-5 border-solid border-8 border-transparent border-t-white"
+        ></div>
+      </div>
     </div>
-    
-    <div class="absolute bottom-5 left-2.5 md:left-5 flex flex-col gap-2.5">
-      <a href="#about" class="text-2xl md:text-4xl text-white font-bold no-underline transition-all duration-300 hover:scale-105 hover:text-yellow-400">
-        Who are you?
-      </a>
-      <a href="#contact" class="text-2xl md:text-4xl text-white font-bold no-underline transition-all duration-300 hover:scale-105 hover:text-yellow-400">
-        How?
-      </a>
-      <a href="#menu" class="text-2xl md:text-4xl text-white font-bold no-underline transition-all duration-300 hover:scale-105 hover:text-yellow-400">
-        What do you have?
-      </a>
-    </div>
-  </div>
 
-  <!-- Section for About -->
-  <section id="about" class="flex flex-col items-center">
-    <h2 class="text-5xl font-bold">About Us</h2>
-    <p class="text-xl pt-1 font-light text-center">Covor is the first and only (if you don't know of any other) speakeasy bar in Chisinau</p>
-    <p class="text-xl pt-1 font-light text-center">Our mission is to popularize and embed our moldovan traditions, our childhoods and the things we love into cocktails as an art form.</p>
-  </section>
-  
-  <!-- Pattern Divider -->
-  <div class="w-full h-12 md:hidden bg-repeat-x bg-left-top" 
-       style="background-image: url('../assets/covor-pattern.jpg'); background-size: 150px auto;"></div>
-  <div class="w-full h-24 hidden md:block bg-repeat-x bg-left-top" 
-       style="background-image: url('../assets/covor-pattern.jpg'); background-size: 300px auto;"></div>
-  
-  <!-- Section for Menu -->
-  <section id="menu" class="flex flex-col items-center">
-    <h2 class="text-5xl font-bold">Menu</h2>
-    <p class="text-xl pt-1 font-light text-center">Sike! We don't have one.</p>
-    <p class="text-xl pt-1 font-light text-center">Each drink is selected carefully for every guest.</p>
-    <p class="text-xl pt-1 font-light text-center">We strive to deliver the best mood and experience.</p>
-    <p class="text-xl pt-1 font-light text-center">You can't put LOVE on a paper.</p>
-  </section>
-  
-  <!-- Pattern Divider -->
-  <div class="w-full h-12 md:hidden bg-repeat-x bg-left-top" 
-       style="background-image: url('../assets/covor-pattern.jpg'); background-size: 150px auto;"></div>
-  <div class="w-full h-24 hidden md:block bg-repeat-x bg-left-top" 
-       style="background-image: url('../assets/covor-pattern.jpg'); background-size: 300px auto;"></div>
-  
-  <!-- Section for Contact -->
-  <section id="contact" class="flex flex-col items-center">
-    <h2 class="text-5xl font-bold">Contact</h2>
-    <p class="text-xl pt-1 font-light text-center">+3737373737</p>
-    <p class="text-xl pt-1 font-light text-center">It's a speakeasy, find it yourself, duh.</p>
-  </section>
-  <!-- Mascot Element -->
- <div class="fixed bottom-5 right-5 z-50 transition-all duration-500 mascot-animation group">
-  <img 
-    src="/assets/bartender-drink-occupation-avatar-512.webp" 
-    alt="Bartender Mascot" 
-    class="w-24 h-24 cursor-pointer rounded-full shadow-lg mascot-image-animation"
-  >
-  <div class="absolute bottom-28 right-0 bg-white rounded-lg py-2.5 px-4 shadow-md font-sans text-sm whitespace-nowrap opacity-0 transform translate-y-2.5 transition-all duration-300 pointer-events-none invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-    We're waiting for you
-    <div class="absolute -bottom-2.5 right-5 border-solid border-8 border-transparent border-t-white"></div>
-  </div>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const navLinks = document.getElementById("nav-links");
 
-    menuToggle.addEventListener("click", function () {
-      navLinks.classList.toggle("hidden");
-      navLinks.classList.toggle("flex");
-    });
-  });
-</script>
-
+        menuToggle.addEventListener("click", function () {
+          navLinks.classList.toggle("hidden");
+          navLinks.classList.toggle("flex");
+        });
+      });
+    </script>
+  </body>
 </html>
