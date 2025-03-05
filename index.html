@@ -12,31 +12,44 @@
     rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/header.css" />
+  <!-- <link rel="stylesheet" href="css/header.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/menu.css" />
   <link rel="stylesheet" href="css/hero.css" />
-  <link rel="stylesheet" href="css/mascot.css" />
+  <link rel="stylesheet" href="css/mascot.css" /> -->
+  <link href="dist/output.css" rel="stylesheet">
+
   <title>COVOR Speakeasy Bar</title>
 </head>
 
-<body class="light">
-  <header>
-    <nav>
-      <img class="logo" src="/assets/logo.jpg" alt="Covor Logo" />
+<body class="bg-gray">
+  <header class="bg-white bg-opacity-98 shadow-md sticky top-0 w-full z-10 backdrop-blur-lg ">
+    <nav class="flex justify-between items-center px-5 max-w-6xl mx-auto">
+      <img class="w-16 h-16 md:w-32 md:h-32 object-cover" src="/assets/logo.jpg" alt="Covor Logo" />
 
+ 
       <!-- Kebab Menu Button (Mobile) -->
-      <div class="menu-toggle">
+      <div class="block md:hidden text-2xl cursor-pointer" id="menu-toggle">
         <i class="fas fa-bars"></i>
       </div>
-
-      <div class="nav-links">
-        <a href="#about"><i class="fas fa-book-open"></i> About</a>
-        <a href="#menu"><i class="fas fa-mug-hot"></i> Menu</a>
-        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+  
+      <!-- Navigation Links -->
+      <div class="hidden md:flex flex-col md:flex-row absolute md:relative top-20 right-5 md:top-auto md:right-auto bg-white md:bg-transparent shadow-md md:shadow-none rounded-lg md:rounded-none p-2.5 w-50 md:w-auto md:p-0" id="nav-links">
+        <a href="#about" class="block md:inline-flex px-2.5 md:px-5 py-2.5 md:py-0 text-center text-black font-bold no-underline md:ml-8 relative hover:text-gray-600 transition-colors">
+          <i class="fas fa-book-open mr-2"></i> About
+        </a>
+        <a href="#menu" class="block md:inline-flex px-2.5 md:px-5 py-2.5 md:py-0 text-center text-black font-bold no-underline md:ml-8 relative hover:text-gray-600 transition-colors">
+          <i class="fas fa-mug-hot mr-2"></i> Menu
+        </a>
+        <a href="#contact" class="block md:inline-flex px-2.5 md:px-5 py-2.5 md:py-0 text-center text-black font-bold no-underline md:ml-8 relative hover:text-gray-600 transition-colors">
+          <i class="fas fa-envelope mr-2"></i> Contact
+        </a>
       </div>
     </nav>
-    <div class="covor-pattern"></div>
+    <div class="w-full h-12 md:hidden bg-repeat-x bg-left-top" 
+    style="background-image: url('../assets/covor-pattern.jpg'); background-size: 150px auto;"></div>
+    <div class="w-full h-24 hidden md:block bg-repeat-x bg-left-top" 
+    style="background-image: url('../assets/covor-pattern.jpg'); background-size: 300px auto;"></div>
   </header>
   <div class="hero">
     <img src="/assets/covor-bar-stoika.png" alt="Covor cocktail photo" class="hero-image" />
@@ -50,11 +63,6 @@
     </div>
   </div>
 
-
-
-
-
-  <div class="covor-pattern-divider"></div>
   <!-- Section for About -->
   <section id="about" class="info-section">
     <h2>About Us</h2>
@@ -85,15 +93,16 @@
   <img src="/assets/bartender-drink-occupation-avatar-512.webp" alt="Bartender Mascot" class="mascot-image">
   <div class="mascot-text">We're waiting for you</div>
 </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector(".nav-links");
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
 
-      menuToggle.addEventListener("click", function () {
-        navLinks.classList.toggle("active");
-      });
+    menuToggle.addEventListener("click", function () {
+      navLinks.classList.toggle("hidden");
+      navLinks.classList.toggle("flex");
     });
-  </script>
+  });
+</script>
 
 </html>
