@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="/css/mascot.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
     rel="stylesheet" />
@@ -49,50 +50,80 @@
     <div class="w-full h-12 md:hidden bg-repeat-x bg-left-top" 
     style="background-image: url('../assets/covor-pattern.jpg'); background-size: 150px auto;"></div>
     <div class="w-full h-24 hidden md:block bg-repeat-x bg-left-top" 
-    style="background-image: url('../assets/covor-pattern.jpg'); background-size: 300px auto;"></div>
+    style="background-image: url('../assets/covor-pattern.jpg'); background-size: 200px auto;"></div>
   </header>
-  <div class="hero">
-    <img src="/assets/covor-bar-stoika.png" alt="Covor cocktail photo" class="hero-image" />
-    <div class="hero-text">
-      <p>Take a seat</p>
+  <div class="relative w-full h-[90vh] md:h-[80vh]">
+    <img 
+      src="/assets/covor-bar-stoika.png" 
+      alt="Covor cocktail photo" 
+      class="w-full h-full object-cover absolute top-0 left-0 -z-10" 
+    />
+    
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
+      <p class="text-3xl md:text-8xl font-bold text-white text-center m-0 uppercase break-words">
+        Take a seat
+      </p>
     </div>
-    <div class="questions">
-      <a href="#about" class="question">Who are you?</a>
-      <a href="#contact" class="question">How?</a>
-      <a href="#menu" class="question">What do you have?</a>
+    
+    <div class="absolute bottom-5 left-2.5 md:left-5 flex flex-col gap-2.5">
+      <a href="#about" class="text-2xl md:text-4xl text-white font-bold no-underline transition-all duration-300 hover:scale-105 hover:text-yellow-400">
+        Who are you?
+      </a>
+      <a href="#contact" class="text-2xl md:text-4xl text-white font-bold no-underline transition-all duration-300 hover:scale-105 hover:text-yellow-400">
+        How?
+      </a>
+      <a href="#menu" class="text-2xl md:text-4xl text-white font-bold no-underline transition-all duration-300 hover:scale-105 hover:text-yellow-400">
+        What do you have?
+      </a>
     </div>
   </div>
 
   <!-- Section for About -->
-  <section id="about" class="info-section">
-    <h2>About Us</h2>
-    <p>Covor is the first and only (if you don't know of any other) spekeasy bar in Chisinau </p>
-    <p>Our mission is to popularize and embed our moldovan traditions, our childhoods and the things we love into
-      cockatils as an art form.</p>
+  <section id="about" class="flex flex-col items-center">
+    <h2 class="text-5xl font-bold">About Us</h2>
+    <p class="text-xl pt-1 font-light text-center">Covor is the first and only (if you don't know of any other) speakeasy bar in Chisinau</p>
+    <p class="text-xl pt-1 font-light text-center">Our mission is to popularize and embed our moldovan traditions, our childhoods and the things we love into cocktails as an art form.</p>
   </section>
-
-  <div class="covor-pattern-divider"></div>
+  
+  <!-- Pattern Divider -->
+  <div class="w-full h-12 md:hidden bg-repeat-x bg-left-top" 
+       style="background-image: url('../assets/covor-pattern.jpg'); background-size: 150px auto;"></div>
+  <div class="w-full h-24 hidden md:block bg-repeat-x bg-left-top" 
+       style="background-image: url('../assets/covor-pattern.jpg'); background-size: 300px auto;"></div>
+  
   <!-- Section for Menu -->
-  <section id="menu" class="info-section">
-    <h2>Menu</h2>
-    <p>Sike! We don't have one.</p>
-    <p>Each drink is selected carefully for every guest.</p>
-    <p>We strive to deliver the best mood and experience.</p>
-    <p>You can't put LOVE on a paper.</p>
+  <section id="menu" class="flex flex-col items-center">
+    <h2 class="text-5xl font-bold">Menu</h2>
+    <p class="text-xl pt-1 font-light text-center">Sike! We don't have one.</p>
+    <p class="text-xl pt-1 font-light text-center">Each drink is selected carefully for every guest.</p>
+    <p class="text-xl pt-1 font-light text-center">We strive to deliver the best mood and experience.</p>
+    <p class="text-xl pt-1 font-light text-center">You can't put LOVE on a paper.</p>
   </section>
-  <div class="covor-pattern-divider"></div>
+  
+  <!-- Pattern Divider -->
+  <div class="w-full h-12 md:hidden bg-repeat-x bg-left-top" 
+       style="background-image: url('../assets/covor-pattern.jpg'); background-size: 150px auto;"></div>
+  <div class="w-full h-24 hidden md:block bg-repeat-x bg-left-top" 
+       style="background-image: url('../assets/covor-pattern.jpg'); background-size: 300px auto;"></div>
+  
   <!-- Section for Contact -->
-  <section id="contact" class="info-section">
-    <h2>Contact</h2>
-    <p>+3737373737</p>
-    <p>It's a speakeasy, find it yourself, duh.</p>
+  <section id="contact" class="flex flex-col items-center">
+    <h2 class="text-5xl font-bold">Contact</h2>
+    <p class="text-xl pt-1 font-light text-center">+3737373737</p>
+    <p class="text-xl pt-1 font-light text-center">It's a speakeasy, find it yourself, duh.</p>
   </section>
   <!-- Mascot Element -->
  <!-- Bartender Mascot Element -->
-<div class="mascot-container">
-  <img src="/assets/bartender-drink-occupation-avatar-512.webp" alt="Bartender Mascot" class="mascot-image">
-  <div class="mascot-text">We're waiting for you</div>
-</div>
+ <div class="fixed bottom-5 right-5 z-50 transition-all duration-500 mascot-animation group">
+  <img 
+    src="/assets/bartender-drink-occupation-avatar-512.webp" 
+    alt="Bartender Mascot" 
+    class="w-24 h-24 cursor-pointer rounded-full shadow-lg mascot-image-animation"
+  >
+  <div class="absolute bottom-28 right-0 bg-white rounded-lg py-2.5 px-4 shadow-md font-sans text-sm whitespace-nowrap opacity-0 transform translate-y-2.5 transition-all duration-300 pointer-events-none invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+    We're waiting for you
+    <div class="absolute -bottom-2.5 right-5 border-solid border-8 border-transparent border-t-white"></div>
+  </div>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.getElementById("menu-toggle");
